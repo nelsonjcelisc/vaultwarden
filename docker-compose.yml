@@ -1,0 +1,40 @@
+services:
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    volumes:
+      - ./vaultwarden:/data/
+    ports:
+      - 8200:80
+    restart: unless-stopped
+# services:
+#   vaultwarden:
+#     image: vaultwarden/server:latest
+#     container_name: vaultwarden
+#     mac_address: "${MAC_ADDRESS}"
+#     restart: unless-stopped
+#     environment:
+#       #- DOMAIN=https://vaultwarden.cdo.local
+#       - SIGNUPS_ALLOWED=true
+#       - WEBSOCKET_ENABLED=true
+#       - TZ=${TZ}
+#       - ADMIN_TOKEN=${ADMIN_TOKEN}
+#     volumes:
+#       - ${VAULTPATH}/data:/data
+#       - ${VAULTPATH}/vaultwarden.crt:/ssl/cert.pem:ro
+#       - ${VAULTPATH}/vaultwarden.key:/ssl/key.pem:ro
+#     ports:
+#       - "80:80"
+#       - "3012:3012"
+#     # command: >
+#     #   sh -c "mkdir -p /data/ssl &&
+#     #          cp /ssl/cert.pem /data/ssl/cert.pem &&
+#     #          cp /ssl/key.pem /data/ssl/key.pem &&
+#     #          /vaultwarden --ssl --ssl-cert /ssl/cert.pem --ssl-key /ssl/key.pem"
+# #     networks:
+# #       - infraOCI
+
+# # networks:
+# #   infraOCI:
+# #     external: true
