@@ -1,0 +1,17 @@
+# No subir la base de datos real
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+
+# No subir llaves ni certificados privados (ya los tenemos en el Secret de K8s)
+*.key
+*.pem
+*.pfx
+/certs/
+
+# No subir archivos de entorno con tokens
+.env
+
+# Carpetas de datos de la aplicación
+/data/
+/vw-data/
