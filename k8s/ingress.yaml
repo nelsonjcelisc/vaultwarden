@@ -10,7 +10,7 @@ spec:
   tls:
   - hosts:
     - vaultwarden.cdo.local # <--- Cambiado aquí
-    secretName: vault-tls
+    secretName: oso-cloud-cert #antes --vault-tls
   rules:
   - host: vaultwarden.cdo.local # <--- Cambiado aquí
     http:
